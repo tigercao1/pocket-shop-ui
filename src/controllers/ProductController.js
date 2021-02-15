@@ -4,7 +4,7 @@ import env from 'react-dotenv';
 class ProductController {
     constructor() {
         this.api = axios.create({
-            baseURL: env.API_PROTOCOL + "://" + env.API_HOST + env.API_PORT ? ":" + env.API_PORT : "",
+            baseURL: env.API_PROTOCOL + "://" + env.API_HOST + (env.API_PORT !== null ? ":" + env.API_PORT : ""),
             responseType: "json",
             timeout: 5000
         });
